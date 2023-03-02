@@ -1,0 +1,33 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+        {{! mx-auto para centrarlo}}
+        <h3 class="text-center">
+            Agrega un Producto
+        </h3>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/products/add_p" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="namee" placeholder="Nombre" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="brand" placeholder="Marca">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="min_desc" placeholder="Descripción">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control col-12 container-fluid" type="number" id="quantity" name="quantity" min="1" max="100" placeholder="Cantidad">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                Guardar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

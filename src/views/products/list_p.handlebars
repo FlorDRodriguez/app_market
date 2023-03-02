@@ -1,0 +1,35 @@
+<div class="container p-4">
+    <div class="row">
+        
+        {{#each products}} {{!recorre los enlaces enviados}}
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3 class="card-title text-uppercase">{{!uppercase para que el texto esté en MAYUS}}
+                            {{ category_id }}
+                        </h3>
+                        <h3 class="card-title text-uppercase">{{!uppercase para que el texto esté en MAYUS}}
+                            {{ namee }}
+                        </h3>
+                        <p class="m-2"> {{ brand }} </p>
+                        <p class="m-2"> {{ min_desc }} </p>
+                        <p class="m-2"> {{ quantity }} </p>
+                        <div class="btn-group">
+                            <a href="/products/delete/{{ id }}" class="btn btn-danger">Eliminar</a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="/products/edit/{{ id }}" class="btn btn-secondary">Editar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{else}} {{!Si no hay ningún enlace envia un mje}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay productos agregados aún</p>
+                    <a href="/products/add_p">¡Agrega un producto!</a>
+                </div>
+            </div>
+        {{/each }}
+    </div>
+</div>

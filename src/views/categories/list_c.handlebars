@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+<div class="container p-4">
+    <div class="row">
+        {{#each categories}}
+            <div class="col-md-3">
+
+                <div class="card"> 
+                    <div class="card-body col-auto" >
+
+                        <div class="row">
+                            <h3 class="card-title text-uppercase text-align-center">
+                                {{ namee }}
+                            </h3>
+                            <li style="list-style: none"  class="align-right">
+                                <a class="navbar-toggler" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/categories/delete/{{ id }}">Eliminar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/categories/edit/{{ id }}">Editar</a>
+                                </div>
+                            </li>
+                        </div>
+
+                        <a href="../products/add_p">
+                            <i class="bi bi-plus-circle-fill"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+            </div>
+        {{else}} {{!Si no hay ninguna categoria envia un mje}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>No hay categorias creadas aún</p>
+                    <a href="/categories/add_c">¡Agrega una categoria!</a>
+                </div>
+            </div>
+        {{/each }}
+    </div>
+</div>

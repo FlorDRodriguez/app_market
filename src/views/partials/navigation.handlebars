@@ -1,0 +1,44 @@
+{{!creo toda la navegación y despues la exporto a main}}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <h5>GoMarket</h5>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+            Lista de Compras
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/categories/list_c">Ver Listas</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/categories/add_c">Agregar Lista</a>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Cerrar sesión</a>
+          </li>
+          {{else}}
+            <li class="nav-item">
+              <a href="/signin" class="nav-link"> Iniciar Sesión </a>
+            </li>
+            <li class="nav-item">
+              <a href="/signup"  class="nav-link"> Registrarse </a>
+            </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

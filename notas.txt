@@ -1,0 +1,75 @@
+1er paso: npm init --yes >>> crea el package.json
+2do paso: npm i express express-handlebars express-session 
+            mysql express-mysql-session morgan bcryptjs passport 
+            passport-local timeago.js connect-flash express-validator:
+            instala todos los paquetes y se crea la carpeta node_modules y 
+            el archivo packago-lock.json
+3er paso: creo las carpetas
+
+- src: se arma la estructura
+    > carpetas:
+        - lib: 
+            . auth.js: se protegen las rutas
+            . handlebars.js: se conf funciones de handlebars (timeago)
+            . helpers.js: se encriptan las contraseñas
+            . passport.js: se crea el signin y el signup con ciertas condiciones
+
+        - public: 
+            - css
+                . styles.css
+            - img
+
+        - routes:
+            . authentication.js: se configuran las rutas de signin, signup, logout
+            . index.js
+            . links.js: se configuran las rutas de add, list, delete
+
+        - views:
+            - auth
+                . signin.hbs
+                . signup.hbs
+            - layouts
+                . main.hbs: partes comunes del cod
+            - links
+                . add.hbs
+                . edit.hbs
+                . list.hbs
+            - partials: pedazos de cod que se pueden reutilizar
+                . messagge.hbs
+                . navigation.hbs
+    
+    > archivos:
+        - index.js: arranca la app
+        - database.js: conexión a mysql
+        - keys.js: almacena posibles claves necesarias p utilizar el servicio
+
+CONCEPTOS
+
+- Handlebars.js es un motor de plantillas muy popular que es potente, 
+fácil de utilizar y que cuenta con una gran comunidad. 
+Con Handlebars, podrás separar el diseño HTML del resto de tu Javascript, 
+para así escribir código mucho más limpio.
+
+- NODEMON Es una herramienta que monitorea los cambios en el código fuente que
+se está desarrollando y automáticamente reinicia el servidor
+
+- Express es el framework web más popular de Node
+para que creacion de app backend
+
+
+-La función res.render () se usa para renderizar una vista y
+envía la cadena HTML renderizada al cliente.
+
+- Un framework es un esquema o marco de trabajo que 
+ofrece una estructura base para elaborar un proyecto con objetivos específicos, 
+una especie de plantilla que sirve como punto de partida 
+para la organización y desarrollo de software.
+
+- morgan permite crear logs o mjes de que es lo que 
+el cliente le pide al server
+
+- passport para manejar el proceso de loguin
+
+- express validator es para validar los datos que el user envia
+
+- 
