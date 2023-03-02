@@ -10,11 +10,6 @@ const { isLoggedIn } = require('../lib/auth');//de ese archivo importo ese metod
 router.get('/add_p', isLoggedIn, async (req, res) => {
     res.render('products/add_p');
 });
-/*router.get('/add_p', isLoggedIn, async (req, res) => {
-    const { id } = req.user;
-    const categories = await pool.query('SELECT * FROM categories WHERE user_id = ?', [id]);
-    res.render('products/add_p', { categories });
-});codigo marcos*/
 
 router.post('/add_p', isLoggedIn, async (req , res) =>{
     const { namee, brand, min_desc, quantity, category_id } = req.body;//del objeto quiero esa prop
